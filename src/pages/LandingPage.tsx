@@ -4,7 +4,7 @@ import {navigate} from "@storybook/addon-links";
 import './LandingPage.css';
 
 
-function LandingPage(): JSX.Element {
+export function LandingPage(): JSX.Element {
     const history = useNavigate();
 
     return (
@@ -17,4 +17,3 @@ function LandingPage(): JSX.Element {
         </div>
     );
 }
-export default LandingPage;
