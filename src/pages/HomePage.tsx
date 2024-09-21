@@ -25,6 +25,8 @@ import PharmacyImage from '../img/homePage/pharmacy.svg';
 import PillImage from '../img/homePage/pill.svg';
 import classes from './HomePage.module.css';
 
+//import {user} from '../firebase/firebase';
+
 const carouselItems = [
   {
     img: <IconChecklist />,
@@ -95,7 +97,7 @@ const recommendations = [
 export function HomePage(): JSX.Element {
   const navigate = useNavigate();
   const theme = useMantineTheme();
-  const profileName = 'John Doe'; // Static profile name
+  const profileName = "John Doe"; // Static profile name
 
   return (
     <Box bg="gray.0">
