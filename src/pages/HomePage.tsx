@@ -16,7 +16,7 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
-import { IconChecklist, IconGift, IconSquareCheck } from '@tabler/icons-react';
+import { IconChecklist, IconGift, IconMessage, IconSquareCheck } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 import DoctorImage from '../img/homePage/doctor.svg';
 import HealthRecordImage from '../img/homePage/health-record.svg';
@@ -29,30 +29,30 @@ const carouselItems = [
   {
     img: <IconChecklist />,
     title: 'Welcome to Rice OwlHealth Portal',
-    description: 'our health is our priority. Access all your medical needs with ease.',
+    description: 'Your health is our priority.',
     url: '/get-care',
     label: 'Learn how we help',
   },
   {
     img: <IconChecklist />,
-    title: 'Verify Email',
-    description: 'Please verify your email to continue accessing the portal.',
+    title: 'View Health Records',
+    description: 'Access all your previous health records.',
     url: '/account',
-    label: 'Send verification email',
+    label: 'View Records',
   },
   {
     img: <IconChecklist />,
-    title: 'Select a Doctor',
-    description: 'Choose the right doctor for your ongoing healthcare needs.',
+    title: 'Book an Appointment',
+    description: 'Select an available timeslot and doctor to meet your needs.',
     url: '/account/provider/choose-a-primary-care-povider',
-    label: 'Choose a Primary Care Provider',
+    label: 'Choose a timeslot',
   },
   {
     img: <IconChecklist />,
-    title: 'Emergency Contact',
-    description: 'Ensure we can reach out to your emergency contacts when needed.',
+    title: 'Services Offered',
+    description: 'Explore the health services we offer.',
     url: '/account',
-    label: 'Add emergency contact',
+    label: 'See our services',
   },
 ];
 
@@ -65,7 +65,7 @@ const linkPages = [
   },
   {
     img: PillImage,
-    title: 'Request Prescription Renewal',
+    title: 'View Prescriptions',
     description: '',
     href: '/health-record/medications',
   },
@@ -87,8 +87,8 @@ const recommendations = [
     description: 'Request a prescription for over-the-counter items.',
   },
   {
-    title: 'Request health record',
-    description: 'Get records sent to or from Foo Medical.',
+    title: 'Get more help',
+    description: 'Receive referrals to other clinics for specialized care.',
   },
 ];
 
@@ -101,7 +101,7 @@ export function HomePage(): JSX.Element {
     <Box bg="gray.0">
       <Box className={classes.announcements}>
         <span>
-          Announcements go here. <Anchor href="#">Include links if needed.</Anchor>
+          Check our operating hours. <Anchor href="#">Fall 2024 Hours.</Anchor>
         </span>
       </Box>
       <div className={classes.hero}>
@@ -121,10 +121,10 @@ export function HomePage(): JSX.Element {
       </div>
       <Box className={classes.callToAction}>
         <Group justify="center">
-          <IconGift />
-          <p>Put calls to action here</p>
+          <IconMessage />
+          <p>Have a question?</p>
           <Button variant="white" onClick={() => navigate('/messages')}>
-            Send Message
+            Chat with your provider
           </Button>
         </Group>
       </Box>
@@ -151,22 +151,6 @@ export function HomePage(): JSX.Element {
       <Box p="lg">
         <Container>
           <Card shadow="md" radius="md" className={classes.card} p="xl">
-            <IconSquareCheck />
-            <Text size="lg" fw={500} mt="md">
-              Better rest, better health
-            </Text>
-            <Text size="sm" color="dimmed" my="sm">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </Text>
-            <Group>
-              <Button>Invite Friends</Button>
-            </Group>
-          </Card>
-        </Container>
-      </Box>
-      <Box p="lg">
-        <Container>
-          <Card shadow="md" radius="md" className={classes.card} p="xl">
             <Flex>
               <Image src={HealthVisitImage} m="-40px 30px -40px -40px" w="40%" />
               <div>
@@ -174,10 +158,10 @@ export function HomePage(): JSX.Element {
                   Now available
                 </Badge>
                 <Text size="lg" fw={500} mt="md">
-                  Title
+                  Free Flu Shots
                 </Text>
                 <Text size="sm" color="dimmed" my="sm">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Get your free flu shot to stay protected during flu season.
                 </Text>
               </div>
             </Flex>
@@ -212,7 +196,7 @@ export function HomePage(): JSX.Element {
                     <Text size="sm" color="dimmed" my="sm">
                       Having a consistent, trusted provider can lead to better health.
                     </Text>
-                    <Button onClick={() => navigate('/account/provider')}>Choose Provider</Button>
+                    <Button onClick={() => navigate('/account/provider')}>See Providers</Button>
                   </div>
                 </Group>
               </Card>
