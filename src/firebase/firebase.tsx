@@ -22,4 +22,5 @@ const auth = getAuth(app);
 const database = getDatabase(app);
 //const user = auth.currentUser;
 
+
 export { app, auth, database};

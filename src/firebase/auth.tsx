@@ -1,4 +1,5 @@
 
+import { userEvent } from "@test-utils";
 import { auth } from "./firebase";
 import {
   createUserWithEmailAndPassword,
@@ -23,8 +24,14 @@ export const doSignInWithEmailAndPassword = async (email: string, password: stri
 
 export const doSignInWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
+  
   const result = await signInWithPopup(auth, provider);
   const user = result.user;
+
+  if (user.email && !user.email.endsWith('@rice.edu')) {
+    await auth.signOut(); // Sign the user out
+    throw new Error("You must log in with a @rice.edu email.");
+  }
 
   // add user to Firestore
 };
