@@ -1,10 +1,7 @@
 import { auth } from "../firebase.config";
-
-<<<<<<< HEAD
 import { userEvent } from "@test-utils";
-import { auth } from "./firebase";
-=======
->>>>>>> 191e198bdc86207325b889af8f313e2a8caa55db
+
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
