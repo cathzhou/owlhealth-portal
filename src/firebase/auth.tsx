@@ -1,4 +1,5 @@
-import { auth } from "../firebase.config";
+import { auth, messagedatabase } from "../firebase.config";
+import { setDoc, doc } from 'firebase/firestore';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -8,6 +9,9 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
+
+
+
 
 // Type definitions
 export const doCreateUserWithEmailAndPassword = async (email: string, password: string) => {
@@ -24,6 +28,10 @@ export const doSignInWithGoogle = async () => {
   const user = result.user;
 
   // add user to Firestore
+  await setDoc(doc(messagedatabase, 'users', user.uid), {
+    name: user.displayName,
+    email: user.email,
+  });
 };
 
 export const doSignOut = async () => {
