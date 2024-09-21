@@ -16,7 +16,7 @@ export function LandingPage(): JSX.Element {
     return (
         <AuthProvider> 
             <div className="landing-page">
-                <h1>Welcome to Rice Student Health Portal</h1>
+                <h1>Welcome to the Rice Student Health Portal</h1>
                 <p>Your one-stop solution for health services</p>
                 <Login />
             </div>
