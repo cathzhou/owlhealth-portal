@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { collection, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore';
 import { messagedatabase, auth } from '../firebase.config';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
 
 // Define an interface for the message object
 interface Message {

@@ -1,4 +1,5 @@
-import { auth } from "../firebase.config";
+import { auth, messagedatabase } from "../firebase.config";
+import { setDoc, doc } from 'firebase/firestore';
 import { userEvent } from "@test-utils";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +12,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
+
 
 
 
@@ -35,6 +37,10 @@ export const doSignInWithGoogle = async () => {
   }
 
   // add user to Firestore
+  await setDoc(doc(messagedatabase, 'users', user.uid), {
+    name: user.displayName,
+    email: user.email,
+  });
 };
 
 export const doSignOut = async () => {

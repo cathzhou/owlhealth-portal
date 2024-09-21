@@ -18,6 +18,8 @@ import {
 } from '@mantine/core';
 import { IconChecklist, IconGift, IconMessage, IconSquareCheck } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
+import { messagedatabase, auth } from '../firebase.config';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import DoctorImage from '../img/homePage/doctor.svg';
 import HealthRecordImage from '../img/homePage/health-record.svg';
 import HealthVisitImage from '../img/homePage/health-visit.jpg';
@@ -95,9 +97,10 @@ const recommendations = [
 ];
 
 export function HomePage(): JSX.Element {
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const theme = useMantineTheme();
-  const profileName = "John Doe"; // Static profile name
+  const profileName = user?.displayName
 
   return (
     <Box bg="gray.0">
