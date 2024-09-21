@@ -1,13 +1,20 @@
-import '@mantine/core/styles.css';
-
-import { MantineProvider } from '@mantine/core';
+import { AppShell } from '@mantine/core';
+import { Suspense } from 'react';
 import { Router } from './Router';
-import { theme } from './theme';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import { Loading } from './components/Loading';
 
-export default function App() {
+export function App(): JSX.Element | null {
   return (
-    <MantineProvider theme={theme}>
-      <Router />
-    </MantineProvider>
+    <AppShell header={{ height: 80 }}>
+      <Header />
+      <AppShell.Main>
+        <Suspense fallback={<Loading />}>
+          <Router />
+        </Suspense>
+      </AppShell.Main>
+      <Footer />
+    </AppShell>
   );
 }
