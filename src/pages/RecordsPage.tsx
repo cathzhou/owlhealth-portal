@@ -3,7 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/storage';
 
 
-export function RecordsPage(): null {
+export function RecordsPage(): JSX.Element {
   const PdfPortal = () => {
     const [file, setFile] = useState(null);
     const [progress, setProgress] = useState(0);
