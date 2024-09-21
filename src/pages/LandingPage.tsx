@@ -1,0 +1,2 @@
+export function LandingPage():
+    return
