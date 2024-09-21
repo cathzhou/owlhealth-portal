@@ -47,7 +47,7 @@ export const doSendEmailVerification = async () => {
   const currentUser = auth.currentUser;
   if (currentUser) {
     return sendEmailVerification(currentUser, {
-      url: `${window.location.origin}/home`,
+      url: `${window.location.origin}/login`,
     });
   } else {
     throw new Error("No user is currently signed in.");

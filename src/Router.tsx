@@ -5,7 +5,8 @@ import { HomePage } from './pages/HomePage';
 export function Router(): JSX.Element {
   return (
     <Routes>
-      <Route path="/home" element={<LandingPage />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/home" element={<HomePage />} />
     </Routes>
   );
 }
