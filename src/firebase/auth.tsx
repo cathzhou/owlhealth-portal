@@ -1,3 +1,4 @@
+
 import { auth } from "./firebase";
 import {
   createUserWithEmailAndPassword,
@@ -8,6 +9,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
+
+
 
 // Type definitions
 export const doCreateUserWithEmailAndPassword = async (email: string, password: string) => {
