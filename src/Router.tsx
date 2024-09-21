@@ -7,6 +7,7 @@ export function Router(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/login" element={<LandingPage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/messages" element={<MessagesPage />} />
     </Routes>

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import classes from './Header.module.css';
 import { Logo } from './Logo';
+import { doSignOut} from '../firebase/auth';
 
 const navigation = [
   { name: 'Health Record', href: '/health-record' },
@@ -65,7 +66,9 @@ export function Header(): JSX.Element {
               </Menu.Item>
               <Menu.Item
                 leftSection={<IconLogout size={16} color={theme.colors.gray[6]} stroke={1.5} />}
-                onClick={() => navigate('/signout')}
+                onClick={() => doSignOut() }
+                  //navigate('/login')
+                
               >
                 Sign out
               </Menu.Item>

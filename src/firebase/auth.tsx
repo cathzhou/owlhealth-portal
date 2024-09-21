@@ -1,6 +1,6 @@
 import { auth } from "../firebase.config";
 import { userEvent } from "@test-utils";
-
+import { useNavigate } from "react-router-dom";
 
 import {
   createUserWithEmailAndPassword,
@@ -38,7 +38,15 @@ export const doSignInWithGoogle = async () => {
 };
 
 export const doSignOut = async () => {
-  return auth.signOut();
+  try {
+    await auth.signOut();
+    const navigate = useNavigate();
+    navigate("/");
+    //console.log('sucessfully signed out')
+  } catch (error: any) {
+    console.error("Error signing out:", error.message);
+  }
+  
 };
 
 export const doPasswordReset = async (email: string) => {
