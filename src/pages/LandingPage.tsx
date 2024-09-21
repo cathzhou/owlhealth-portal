@@ -1,23 +1,20 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@mantine/core";
 import {navigate} from "@storybook/addon-links";
+import './LandingPage.css';
 
 
-const LandingPage = () => {
+function LandingPage(): JSX.Element {
     const history = useNavigate();
 
-    const handleLogin = () => {
-        navigate('/login');
-
-        return (
-            <div className="landing-page">
-                <h1>Welcome to Student Health Portal</h1>
-                <p>Your one-stop solution for health services</p>
-                <Button variant="contained" color="primary" onClick={handleLogin}>
-                    Login
-                </Button>
-            </div>
-        );
-    };
+    return (
+        <div className="landing-page">
+            <h1>Welcome to Rice Student Health Portal</h1>
+            <p>Your one-stop solution for health services</p>
+            <Button variant="contained" color="primary">
+                Login with Google
+            </Button>
+        </div>
+    );
 }
 export default LandingPage;
