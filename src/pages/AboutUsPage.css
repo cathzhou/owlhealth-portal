@@ -1,0 +1,45 @@
+.about-us-page {
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 20px auto; /* Center the page */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.about-us-page h1 {
+    font-size: 1.8em; /* Increase font size for emphasis */
+    color: white; /* White text color */
+    margin-bottom: 15px; /* Space below the heading */
+    padding: 10px; /* Padding inside the box */
+    background-color: #111960; /* Blue background color */
+    border-radius: 4px; /* Rounded corners for the heading */
+}
+
+
+.about-us-page p {
+    font-size: 1em; /* Normal font size for paragraph */
+    line-height: 1.6; /* Improved line height for readability */
+    color: #555; /* Slightly lighter color for text */
+    margin-bottom: 20px; /* Space below paragraphs */
+}
+
+.about-us-page .login-button {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin-top: 20px; /* Space above the button */
+}
+
+@media (max-width: 600px) {
+    .about-us-page {
+        padding: 15px; /* Less padding on small screens */
+    }
+
+    .about-us-page h1 {
+        font-size: 1.5em; /* Smaller font size on small screens */
+    }
+
+    .about-us-page p {
+        font-size: 0.9em; /* Smaller text size for readability */
+    }
+}

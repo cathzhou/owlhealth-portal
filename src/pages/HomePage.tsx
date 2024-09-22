@@ -35,7 +35,7 @@ const carouselItems = [
     img: <IconChecklist />,
     title: 'Welcome to Rice OwlHealth Portal',
     description: 'Your health is our priority.',
-    url: '/get-care',
+    url: '/about-us',
     label: 'Learn how we help',
   },
   {
@@ -143,7 +143,8 @@ export function HomePage(): JSX.Element {
           <Grid>
             {carouselItems.map((item, index) => (
               <Grid.Col key={`card-${index}`} span={3} pb={40}>
-                <Card shadow="md" radius="md" className={classes.card} p="xl">
+                <Card shadow="md" radius="md" className={classes.card} p="xl" onClick={() => navigate(item.url)}  // Navigate on card click
+                    style={{ cursor: 'pointer' }}>
                   <IconSquareCheck />
                   <Text size="lg" fw={500} mt="md">
                     {item.title}
