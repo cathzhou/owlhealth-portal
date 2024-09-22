@@ -37,10 +37,12 @@ export const doSignInWithGoogle = async () => {
   }
 
   // add user to Firestore
-  await setDoc(doc(messagedatabase, 'users', user.uid), {
+  await setDoc(doc(messagedatabase, "users", user.uid), {
     name: user.displayName,
     email: user.email,
-  });
+    id: user.uid,
+  })
+  console.log('user added to Firestore');
 };
 
 export const doSignOut = async () => {
