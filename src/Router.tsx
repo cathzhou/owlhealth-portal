@@ -5,6 +5,7 @@ import MessagesPage from './pages/MessagesPage';
 import RecordsPage from './pages/RecordsPage';
 
 import {AboutUsPage} from './pages/AboutUsPage';
+import {ServicesPage} from './pages/ServicesPage';
 
 export function Router(): JSX.Element {
   return (
@@ -15,6 +16,7 @@ export function Router(): JSX.Element {
       <Route path="/messages" element={<MessagesPage />} />
       <Route path="/health-record" element={< RecordsPage/>} />
       <Route path="/about-us" element={<AboutUsPage />} />
+      <Route path="/services" element={<ServicesPage/>} />
     </Routes>
   );
 }

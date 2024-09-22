@@ -56,7 +56,7 @@ const carouselItems = [
     img: <IconChecklist />,
     title: 'Services Offered',
     description: 'Explore the health services and prices we offer',
-    url: '/account',
+    url: '/services',
     label: 'See our services',
   },
 ];
