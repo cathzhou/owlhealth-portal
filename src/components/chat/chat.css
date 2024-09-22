@@ -1,0 +1,117 @@
+.chat {
+    flex: 2;
+    border-left: 1px solid #dddddd35;
+    border-right: 1px solid #dddddd35;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9; /* Light background for better contrast */
+}
+
+.top {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #dddddd35;
+    background-color: #ffffff; /* White background for the top section */
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+}
+
+.texts span {
+    font-size: 18px; /* Larger font size for the user name */
+    font-weight: bold;
+    color: #333; /* Darker color for better readability */
+}
+
+.texts p {
+    margin: 0;
+    color: #777; /* Lighter color for the subtitle */
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.center {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ffffff; /* White background for the message area */
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    font-size: 16px; /* Larger font size for messages */
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #dcf8c6; /* Light green background for sent messages */
+}
+
+.message.received {
+    align-self: flex-start;
+    background-color: #ffffff; /* White background for received messages */
+    border: 1px solid #dddddd; /* Border for better distinction */
+}
+
+.bottom {
+    padding: 20px;
+    border-top: 1px solid #dddddd35;
+    background-color: #ffffff; /* White background for the bottom section */
+}
+
+.bottom form {
+    display: flex;
+    gap: 10px;
+}
+
+.bottom input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px; /* Larger font size for input */
+}
+
+.bottom button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px; /* Larger font size for button */
+}
+
+.bottom button:hover {
+    background-color: #0056b3;
+}
