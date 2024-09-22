@@ -1,6 +1,7 @@
-import { auth } from "../firebase.config";
+import { auth, messagedatabase } from "../firebase.config";
+import { setDoc, doc } from 'firebase/firestore';
 import { userEvent } from "@test-utils";
-
+import { useNavigate } from "react-router-dom";
 
 import {
   createUserWithEmailAndPassword,
@@ -11,6 +12,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
+
 
 
 
@@ -35,10 +37,22 @@ export const doSignInWithGoogle = async () => {
   }
 
   // add user to Firestore
+  await setDoc(doc(messagedatabase, 'users', user.uid), {
+    name: user.displayName,
+    email: user.email,
+  });
 };
 
 export const doSignOut = async () => {
-  return auth.signOut();
+  try {
+    await auth.signOut();
+    // const navigate = useNavigate();
+    // navigate("/account/profile");
+    //console.log('sucessfully signed out')
+  } catch (error: any) {
+    console.error("Error signing out:", error.message);
+  }
+  
 };
 
 export const doPasswordReset = async (email: string) => {

@@ -17,13 +17,16 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { IconChecklist, IconGift, IconMessage, IconSquareCheck } from '@tabler/icons-react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { messagedatabase, auth } from '../firebase.config';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import DoctorImage from '../img/homePage/doctor.svg';
 import HealthRecordImage from '../img/homePage/health-record.svg';
 import HealthVisitImage from '../img/homePage/health-visit.jpg';
 import PharmacyImage from '../img/homePage/pharmacy.svg';
 import PillImage from '../img/homePage/pill.svg';
 import classes from './HomePage.module.css';
+import userLoggedIn from '../components/auth/login'
 
 //import {user} from '../firebase/firebase';
 
@@ -95,11 +98,15 @@ const recommendations = [
 ];
 
 export function HomePage(): JSX.Element {
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const theme = useMantineTheme();
-  const profileName = "John Doe"; // Static profile name
+  const profileName = user?.displayName
 
   return (
+    <div> 
+      {!userLoggedIn && (<Navigate to={'/login'} replace={true} />)}
+    
     <Box bg="gray.0">
       <Box className={classes.announcements}>
         <span>
@@ -107,6 +114,7 @@ export function HomePage(): JSX.Element {
         </span>
       </Box>
       <div className={classes.hero}>
+        
         <Overlay
           gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 40%)"
           opacity={1}
@@ -221,5 +229,6 @@ export function HomePage(): JSX.Element {
         </Container>
       </Box>
     </Box>
+    </div>
   );
 }
