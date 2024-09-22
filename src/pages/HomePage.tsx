@@ -122,7 +122,7 @@ export function HomePage(): JSX.Element {
           />
           <Container className={classes.heroContainer}>
             <Title className={classes.heroTitle}>Hi {profileName},<br />we’re here to help</Title>
-            <Button size="xl" radius="xl" className={classes.heroButton}>
+            <Button size="xl" radius="xl" className={classes.heroButton} onClick={() => navigate('/get-care')}>
               Get Care
             </Button>
           </Container>
