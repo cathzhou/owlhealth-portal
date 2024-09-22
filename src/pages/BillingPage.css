@@ -1,0 +1,105 @@
+.billing-page {
+    max-width: 900px; /* Limit the width for better readability */
+    margin: 20px auto; /* Center the page */
+    padding: 20px;
+    background-color: #f7f7f7; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.billing-page h1, .billing-page h2 {
+    text-align: center;
+    color: #111960; /* Deep blue for headings */
+    margin-bottom: 10px; /* Space below headings */
+}
+
+.billing-page h2 {
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.billing-page h1 {
+    font-size: 2em;
+    margin-top: 0; /* Remove top margin for first heading */
+}
+
+.billing-page .payment-button {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin-top: 30px;
+}
+
+.payment-button a {
+    background-color: #111960; /* Blue background */
+    text-align: center;
+    color: #fff; /* White text */
+    padding: 12px 24px; /* Button padding */
+    
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1.2em; /* Larger font */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.payment-button a:hover {
+    background-color: #0d1450; /* Darker blue on hover */
+}
+
+.billing-page .transaction-history {
+    margin-top: 40px;
+    background-color: #fff; /* White background for the table */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the history section */
+}
+
+.transaction-history h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.transaction-history table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Merge borders */
+    margin-bottom: 20px; /* Space below the table */
+}
+
+.transaction-history th, .transaction-history td {
+    padding: 12px 15px; /* Padding inside the table cells */
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light border below rows */
+}
+
+.transaction-history th {
+    background-color: #f4f4f4; /* Light gray for header */
+    font-weight: bold;
+    color: #333; /* Dark text */
+}
+
+.transaction-history tr:hover {
+    background-color: #f9f9f9; /* Lighter background on row hover */
+}
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+  
+.custom-table th, .custom-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+  
+.custom-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+  
+.custom-table td {
+    background-color: #fff;
+}
+  
+.custom-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
