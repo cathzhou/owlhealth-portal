@@ -1,34 +1,25 @@
-# Mantine Vite template
+# Owl Health Portal
+
+Rice students must book appointments for Student Health Services through phone, at open hours during the day. This may be difficult for students who are unavailable on the weekdays and can be embarrassing for students to divulge personal health details out loud, especially if in public. We aim to develop an online portal which allows students to easily and privately book appointments, as well offering a plethora of other convenient services, including messaging healthcare professionals, viewing health records, and managing payments.
 
 ## Features
+- **Login through Esther**: Securely log in to the portal, requiring Duo (2 factor) authentication
+- **Book appointments**: View a list of physicians, their description and availabilities, and choose a time that works best
+- **Message physicians**: Message healthcare professionals through the portal to receive advice asynchronously
+- **Manage payments**: Make payments through TouchNet and view a previous payment history
+- **View clinic information**: View information about Student Health Services, all in one place
 
-This template comes with the following features:
+## Installation
+Clone the repository, `cd` into the folder, and install all dependencies via:
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+```shell
+yarn install
+```
 
-## npm scripts
+Run the local website through the command:
 
-## Build and dev scripts
+```shell
+npm run dev
+```
 
-- `dev` – start development server
-- `build` – build production version of the app
-- `preview` – locally preview production build
-
-### Testing scripts
-
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `vitest` – runs vitest tests
-- `vitest:watch` – starts vitest watch
-- `test` – runs `vitest`, `prettier:check`, `lint` and `typecheck` scripts
-
-### Other scripts
-
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+Open the corresponding `localhost` URL to view the website in your browser.
