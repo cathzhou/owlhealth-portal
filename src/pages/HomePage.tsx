@@ -110,7 +110,7 @@ export function HomePage(): JSX.Element {
     <Box bg="gray.0">
       <Box className={classes.announcements}>
         <span>
-          Check our operating hours. <Anchor href="#">Fall 2024 Hours.</Anchor>
+          Check our operating hours. <Anchor href="/about-us">Fall 2024 Hours.</Anchor>
         </span>
       </Box>
       <div className={classes.hero}>

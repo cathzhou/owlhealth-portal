@@ -9,6 +9,7 @@
 
 .services-page h1 {
     font-size: 1.8em;
+    font-family: Verdana, sans-serif;
     color: #111960;
     margin-bottom: 15px;
     padding: 10px;
@@ -16,10 +17,12 @@
     color: white;
     border-radius: 4px;
     text-align: center;
+    
 }
 
 .services-page p {
     font-size: 1em;
+    font-family: Verdana, sans-serif;
     color: #555;
     margin-bottom: 20px;
     text-align: center;
