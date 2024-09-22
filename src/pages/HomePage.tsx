@@ -42,7 +42,7 @@ const carouselItems = [
     img: <IconChecklist />,
     title: 'View Health Records',
     description: 'Access all your previous health records.',
-    url: '/account',
+    url: '/health-record',
     label: 'View Records',
   },
   {
@@ -55,7 +55,7 @@ const carouselItems = [
   {
     img: <IconChecklist />,
     title: 'Services Offered',
-    description: 'Explore the health services we offer.',
+    description: 'Explore the health services and prices we offer',
     url: '/account',
     label: 'See our services',
   },
