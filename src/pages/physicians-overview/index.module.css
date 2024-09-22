@@ -17,6 +17,10 @@
   }
 }
 
+.inner .header {
+  height: auto;
+}
+
 .content {
   max-width: 480px;
   margin-right: 4.5rem;

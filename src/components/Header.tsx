@@ -1,4 +1,4 @@
-import { AppShell, Burger, Container, Group, Menu, UnstyledButton, useMantineTheme } from '@mantine/core';
+import { AppShell, Burger, Container, Group, Menu, UnstyledButton, useMantineTheme, Center } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconLogout, IconSettings, IconUserCircle } from '@tabler/icons-react';
 import cx from 'clsx';
@@ -30,12 +30,14 @@ export function Header(): JSX.Element {
     <AppShell.Header>
       <Container>
         <div className={classes.inner}>
-          <UnstyledButton className={classes.logoButton} onClick={() => navigate('/')}>
-            <Logo width={240} />
-          </UnstyledButton>
-          <Group gap={5} className={classes.links}>
+          <Center>
+            <UnstyledButton className={classes.logoButton} onClick={() => navigate('/')}>
+              <Logo width={240} />
+            </UnstyledButton>
+          </Center>
+          <Group gap={20} className={classes.links}>
             {navigation.map((link) => (
-              <Link key={link.name} to={link.href} className={classes.link}>
+              <Link key={link.name} to={link.href} className={classes.link} style={{ padding: "15px" }}>
                 {link.name}
               </Link>
             ))}

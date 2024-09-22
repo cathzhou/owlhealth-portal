@@ -5,8 +5,12 @@
   align-items: center;
 }
 
+.inner button {
+  margin-top: 0;
+}
+
 .logoButton {
-  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  /* padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm); */
   border-radius: var(--mantine-radius-sm);
   transition: background-color 100ms ease;
 

@@ -92,7 +92,7 @@ function fetchAndCreateCards() {
                         {activeId && <Grid.Col span={4} offset={1}>
                             <Text size="xl" fw={700}>{physiciansData[activeId].name}</Text>
                             <Badge color={typeToColor[physiciansData[activeId].practice]}>{physiciansData[activeId].practice}</Badge>
-                            <Text size="sm" c="dimmed" >
+                            <Text size="sm" c="dimmed" mt="xs">
                                 {physiciansData[activeId].description}
                             </Text>
                         </Grid.Col>}
@@ -126,7 +126,7 @@ export function PhysiciansOverview(): JSX.Element {
     return (
         <AppShell header={{ height: 100 }}>
             <Header />
-            <Title order={1} style={{ textAlign: "center" }} mt="md" mb="md">Choose A Physician</Title>
+            <Title order={1} style={{ textAlign: "center", color: "black" }} mb="md">Choose A Physician</Title>
             {fetchAndCreateCards()}
         </AppShell>
     );
