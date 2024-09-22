@@ -1,4 +1,4 @@
-import { AppShell, Burger, Container, Group, Menu, UnstyledButton, useMantineTheme } from '@mantine/core';
+import { AppShell, Burger, Container, Group, Menu, UnstyledButton, useMantineTheme, Center } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconLogout, IconSettings, IconUserCircle } from '@tabler/icons-react';
 import cx from 'clsx';
@@ -6,13 +6,18 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import classes from './Header.module.css';
 import { Logo } from './Logo';
-import { doSignOut} from '../firebase/auth';
+import { doSignOut } from '../firebase/auth';
 
 const navigation = [
   { name: 'Health Records', href: '/health-record' },
   { name: 'Messages', href: '/messages' },
+<<<<<<< HEAD
   { name: 'Billing', href: '/billing' },
+=======
+>>>>>>> e0a75b80754af66803bc072660ff1b0ff498595e
   { name: 'Get Care', href: '/get-care' },
+  { name: 'Map', href: '/about-us' },
+  { name: 'Services', href: '/services' },
 ];
 
 
@@ -23,18 +28,20 @@ export function Header(): JSX.Element {
   const [opened, { toggle }] = useDisclosure(false);
   const [userMenuOpened, setUserMenuOpened] = useState(false);
 
-  
-  
+
+
   return (
     <AppShell.Header>
       <Container>
         <div className={classes.inner}>
-          <UnstyledButton className={classes.logoButton} onClick={() => navigate('/')}>
-            <Logo width={240} />
-          </UnstyledButton>
-          <Group gap={5} className={classes.links}>
+          <Center>
+            <UnstyledButton className={classes.logoButton} onClick={() => navigate('/')}>
+              <Logo width={240} />
+            </UnstyledButton>
+          </Center>
+          <Group gap={20} className={classes.links}>
             {navigation.map((link) => (
-              <Link key={link.name} to={link.href} className={classes.link}>
+              <Link key={link.name} to={link.href} className={classes.link} style={{ padding: "15px" }}>
                 {link.name}
               </Link>
             ))}
@@ -74,8 +81,8 @@ export function Header(): JSX.Element {
                   await doSignOut();  // Ensure sign-out happens first
                   navigate('/login');      // Then navigate to the login or home page
                 }}
-                  
-                
+
+
               >
                 Sign out
               </Menu.Item>
