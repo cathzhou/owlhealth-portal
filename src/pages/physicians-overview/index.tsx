@@ -2,7 +2,6 @@ import { ref, get, set } from "firebase/database";
 import { database } from "../../firebase.config";
 import { AppShell, Button, Text, Title, useMantineTheme, Card, Image, Badge, Grid, Drawer } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Header } from '../../components/Header';
 import classes from './index.module.css';
 import { useEffect, useState } from 'react';
 import Booking from "@/components/Booking";
@@ -124,9 +123,8 @@ function fetchAndCreateCards() {
 
 export function PhysiciansOverview(): JSX.Element {
     return (
-        <AppShell header={{ height: 100 }}>
-            <Header />
-            <Title order={1} style={{ textAlign: "center", color: "black" }} mb="md">Choose A Physician</Title>
+        <AppShell>
+            <Title order={1} style={{ textAlign: "center", color: "black" }} mb="md" mt="sm">Choose A Physician</Title>
             {fetchAndCreateCards()}
         </AppShell>
     );

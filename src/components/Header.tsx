@@ -9,10 +9,11 @@ import { Logo } from './Logo';
 import { doSignOut } from '../firebase/auth';
 
 const navigation = [
+  { name: 'Get Care', href: '/get-care' },
   { name: 'Health Records', href: '/health-record' },
   { name: 'Messages', href: '/messages' },
   { name: 'Billing', href: '/billing' },
-  { name: 'Map', href: '/about-us' },
+  { name: 'About Us', href: '/about-us' },
   { name: 'Services', href: '/services' },
 ];
 
