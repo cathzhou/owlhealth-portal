@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { storage } from '../firebase.config';
 
 export function RecordsPage(): JSX.Element {
 
@@ -23,7 +24,7 @@ export function RecordsPage(): JSX.Element {
         return;
       }
 
-      const storageRef = ref(Storage, `pdfs/${pdfFile.name}`);
+      const storageRef = ref(storage, `pdfs/${pdfFile.name}`);
       const uploadTask = uploadBytesResumable(storageRef, pdfFile);
 
       uploadTask.on(
