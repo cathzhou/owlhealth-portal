@@ -16,12 +16,9 @@ export function Router(): JSX.Element {
       <Route path="/login" element={<LandingPage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/messages" element={<MessagesPage />} />
-      <Route path="/health-record" element={< RecordsPage />} />
       <Route path="/about-us" element={<AboutUsPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/health-record" element={< RecordsPage />} />
-      <Route path="/about-us" element={<AboutUsPage />} />
-      <Route path="/services" element={<ServicesPage />} />
       <Route path="/get-care" element={<PhysiciansOverview />} />
     </Routes>
   );

@@ -6,13 +6,14 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import classes from './Header.module.css';
 import { Logo } from './Logo';
-import { doSignOut} from '../firebase/auth';
+import { doSignOut } from '../firebase/auth';
 
 const navigation = [
   { name: 'Health Record', href: '/health-record' },
   { name: 'Messages', href: '/messages' },
-  { name: 'Care Plan', href: '/care-plan' },
   { name: 'Get Care', href: '/get-care' },
+  { name: 'Map', href: '/about-us' },
+  { name: 'Services', href: '/services' },
 ];
 
 
@@ -23,8 +24,8 @@ export function Header(): JSX.Element {
   const [opened, { toggle }] = useDisclosure(false);
   const [userMenuOpened, setUserMenuOpened] = useState(false);
 
-  
-  
+
+
   return (
     <AppShell.Header>
       <Container>
@@ -74,8 +75,8 @@ export function Header(): JSX.Element {
                   await doSignOut();  // Ensure sign-out happens first
                   navigate('/login');      // Then navigate to the login or home page
                 }}
-                  
-                
+
+
               >
                 Sign out
               </Menu.Item>
