@@ -16,12 +16,12 @@ export default function Booking() {
     const [renderState, setRenderState] = useState<number>(0);
 
     const times: ButtonConfig[] = [
-        { id: 0, label: '9:00 AM' },
-        { id: 1, label: '10:00 AM' },
-        { id: 2, label: '11:00 AM' },
-        { id: 3, label: '12:00 PM' },
-        { id: 4, label: '3:00 PM' },
-        { id: 5, label: '4:00 PM' },
+        { id: 1, label: '9:00 AM' },
+        { id: 2, label: '10:00 AM' },
+        { id: 3, label: '11:00 AM' },
+        { id: 4, label: '12:00 PM' },
+        { id: 5, label: '3:00 PM' },
+        { id: 6, label: '4:00 PM' },
     ];
 
     const handleTimeClick = (id: number) => {
