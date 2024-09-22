@@ -1,69 +1,79 @@
-import React, { useState } from 'react';
-import firebase from 'firebase/app';
-import 'firebase/storage';
-
+import React, { useState } from "react";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 export function RecordsPage(): JSX.Element {
-  const PdfPortal = () => {
-    const [file, setFile] = useState(null);
-    const [progress, setProgress] = useState(0);
-    const [downloadLink, setDownloadLink] = useState('');
 
-    const handleFileChange = (event: { target: { files: React.SetStateAction<null>[]; }; }) => {
-      setFile(event.target.files[0]);
+  const UploadPdf: React.FC = () => {
+    const [pdfFile, setPdfFile] = useState<File | null>(null);
+    const [uploadProgress, setUploadProgress] = useState<number>(0);
+    const [downloadUrl, setDownloadUrl] = useState<string>("");
+
+    // Handle file input
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files && e.target.files[0]) {
+        setPdfFile(e.target.files[0]);
+      }
     };
 
-    const handleUpload = async () => {
-      if (!file) {
-        alert('Please select a PDF file.');
+    // Handle PDF upload
+    const handleUpload = () => {
+      if (!pdfFile) {
+        alert("Please select a file first!");
         return;
       }
 
-      const storageRef = firebase.storage().ref();
-      const fileRef = storageRef.child(`pdfs/${file.name}`);
-
-      const uploadTask = fileRef.put(file);
+      const storageRef = ref(Storage, `pdfs/${pdfFile.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, pdfFile);
 
       uploadTask.on(
-        'state_changed',
-        (snapshot: { bytesTransferred: number; totalBytes: number; }) => {
+        "state_changed",
+        (snapshot) => {
+          // Track upload progress
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setProgress(progress);
+          setUploadProgress(progress);
         },
-        (error: any) => {
-          console.error(error);
+        (error) => {
+          // Handle errors
+          console.error("Upload failed:", error);
+          alert("Upload failed!");
         },
         () => {
-          uploadTask.snapshot.ref.getDownloadURL().then((url: React.SetStateAction<string>) => {
-            setDownloadLink(url);
+          // Get the download URL once upload completes
+          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+            setDownloadUrl(url);
+            alert("Upload successful!");
           });
         }
       );
     };
 
-    const handleDownload = () => {
-      if (!downloadLink) {
-        alert('Please upload a PDF first.');
-        return;
-      }
-
-
-      const link = document.createElement('a');
-      link.href = downloadLink;
-      link.download = 'downloaded_pdf.pdf';
-      link.click();
-    };
-
     return (
       <div>
-        <input type="file" onChange={handleFileChange} />
+        <h2>Upload PDF</h2>
+        <input type="file" accept="application/pdf" onChange={handleFileChange} />
         <button onClick={handleUpload}>Upload PDF</button>
-        <button onClick={handleDownload}>Download PDF</button>
-        <p>Upload progress: {progress}%</p>
-        {downloadLink && <p>Download link: <a href={downloadLink}>Download</a></p>}
+
+        {uploadProgress > 0 && <p>Upload Progress: {uploadProgress.toFixed(2)}%</p>}
+
+        {downloadUrl && (
+          <div>
+            <p>PDF Uploaded successfully. Download it here:</p>
+            <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+              {downloadUrl}
+            </a>
+          </div>
+        )}
       </div>
     );
   };
 
+  return (
+    <div>
+      <h1>Health Records</h1>
+      <UploadPdf />
+    </div>
+  );
 }
 
+export default RecordsPage;
