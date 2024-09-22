@@ -77,4 +77,3 @@ export function RecordsPage(): JSX.Element {
 }
 
 export default RecordsPage;
-
