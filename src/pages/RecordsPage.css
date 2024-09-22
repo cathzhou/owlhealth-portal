@@ -1,5 +1,11 @@
 /* RecordsPage.css */
 
+.file-name,
+.file-date,
+.file-category {
+    margin-right: 10px; /* Adjust as needed */
+}
+
 :root {
     --primary-color: #3498db;
     --secondary-color: #2ecc71;
@@ -52,6 +58,7 @@ h3 {
     margin-top: 2rem;
 }
 
+
 input[type="file"] {
     display: block;
     margin-bottom: 1rem;
@@ -61,7 +68,6 @@ input[type="file"] {
     width: 100%;
     box-sizing: border-box;
 }
-
 input[type="file"]::-webkit-file-upload-button {
     background-color: var(--secondary-color);
     color: white;
