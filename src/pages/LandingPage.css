@@ -23,7 +23,8 @@ body {
 .landing-page h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #111960; /* Primary color */
+    color: #111960;
+    /* Primary color */
 }
 
 /* Style the paragraph */

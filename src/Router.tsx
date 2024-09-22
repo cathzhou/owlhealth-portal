@@ -8,7 +8,7 @@ import { ServicesPage } from './pages/ServicesPage';
 import RecordsPage from './pages/RecordsPage';
 
 import { PhysiciansOverview } from './pages/physicians-overview';
-import {BillingPage} from './pages/BillingPage';
+import { BillingPage } from './pages/BillingPage';
 
 export function Router(): JSX.Element {
   return (
@@ -21,7 +21,10 @@ export function Router(): JSX.Element {
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/health-record" element={< RecordsPage />} />
       <Route path="/get-care" element={<PhysiciansOverview />} />
-      <Route path="/billing" element={<BillingPage/>} />
+      <Route path="/billing" element={<BillingPage />} />
+      <Route path="/health-record" element={< RecordsPage />} />
+      <Route path="/about-us" element={<AboutUsPage />} />
+      <Route path="/services" element={<ServicesPage />} />
     </Routes>
   );
 }
