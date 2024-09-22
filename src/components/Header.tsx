@@ -11,11 +11,7 @@ import { doSignOut } from '../firebase/auth';
 const navigation = [
   { name: 'Health Records', href: '/health-record' },
   { name: 'Messages', href: '/messages' },
-<<<<<<< HEAD
   { name: 'Billing', href: '/billing' },
-=======
->>>>>>> e0a75b80754af66803bc072660ff1b0ff498595e
-  { name: 'Get Care', href: '/get-care' },
   { name: 'Map', href: '/about-us' },
   { name: 'Services', href: '/services' },
 ];
