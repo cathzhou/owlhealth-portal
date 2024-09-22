@@ -6,7 +6,7 @@ const Detail = () => {
             <div className="doctor-info">
                 <img src="src/img/doctoravatar.png" alt="Doctor Avatar" className="doctor-avatar" />
                 <div className="doctor-details">
-                    <h2>Dr. Trotter</h2>
+                    <h2>Dr. Shan</h2>
                     <p>Specialization: Pulmonology</p>
                     <p>Phone: (123) 456-7890</p>
                 </div>

@@ -56,7 +56,7 @@ const Chat = () => {
         <div className="user">
         <img src="src/img/doctoravatar.png" alt="User Avatar" className="user-icon" />
           <div className="texts">
-            <span>Dr. Trotter</span>
+            <span>Dr. Shan</span>
             <p>Certified provider</p>
           </div>
         </div>

@@ -26,7 +26,7 @@ const ChatList = () => {
             <div className="item">
                 <img src="src/img/doctoravatar.png" alt="Doctor Avatar" className="user-icon" />
                 <div className="texts">
-                    <span>Dr. Trotter</span>
+                    <span>Dr. Shan</span>
                     <p>Do you have a headache?</p>
                 </div>
             </div>
