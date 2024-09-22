@@ -46,8 +46,8 @@ export const doSignInWithGoogle = async () => {
 export const doSignOut = async () => {
   try {
     await auth.signOut();
-    const navigate = useNavigate();
-    navigate("/");
+    // const navigate = useNavigate();
+    // navigate("/account/profile");
     //console.log('sucessfully signed out')
   } catch (error: any) {
     console.error("Error signing out:", error.message);

@@ -15,12 +15,16 @@ const navigation = [
   { name: 'Get Care', href: '/get-care' },
 ];
 
+
+
 export function Header(): JSX.Element {
   const navigate = useNavigate();
   const theme = useMantineTheme();
   const [opened, { toggle }] = useDisclosure(false);
   const [userMenuOpened, setUserMenuOpened] = useState(false);
 
+  
+  
   return (
     <AppShell.Header>
       <Container>
@@ -66,8 +70,11 @@ export function Header(): JSX.Element {
               </Menu.Item>
               <Menu.Item
                 leftSection={<IconLogout size={16} color={theme.colors.gray[6]} stroke={1.5} />}
-                onClick={() => doSignOut() }
-                  //navigate('/login')
+                onClick={async () => {
+                  await doSignOut();  // Ensure sign-out happens first
+                  navigate('/login');      // Then navigate to the login or home page
+                }}
+                  
                 
               >
                 Sign out
